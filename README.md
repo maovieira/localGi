@@ -2,17 +2,14 @@
 
 Calculates Getis-Ord Gi and Gi* statistic (local spatial autocorrelation) for a 2D array dataset to evaluate where neighboring locations with either high or low values clusters spatially.
 
-## Getting Started
-
-It is a Javascript ES6 function. To be use it in any compatible browser, Node-jS and so on.
 
 ## Usage
-
-GetisOrdGi(xyz(), inputmaxDist, MissingData)
+It is a Javascript ES6 function. To be use it in any compatible browser, Node-jS and so on.
+function GetisOrdGi(xyz(), inputmaxDist, MissingData)
 
 ### Input:
-* xyz is the 2D array where x,y is a projected pair of coordinates (not a geographic one, such as longitude and latitude pairs) and z is value you want to evaluate. 
-* inputmaxDist is a fixed distance band value (Threshold distance) that determines with represented neighboring locations will be considered in the spatial relationship conceptualization (all neighbours outside the distance treshould will be excluded from calculation). Should be in the same unit as the cartographic projection. Is recomended a value which ensures every location/feature had at LEAST one neighbor especially if the input data is skewed (does not create a nice bell curve when you plot the values as a histogram).
+* xyz is the 2D array where x,y is a projected pair of coordinates (not a geographic one, such as longitude and latitude) and z is the value you want to evaluate. 
+* inputmaxDist is a fixed distance band value (Threshold distance) that determines which represented neighboring locations will be considered in the spatial relationship conceptualization (all neighbours outside the distance treshould will be excluded from calculation). Should be in the same unit as the cartographic projection. Is recomended a value which ensures every location/feature had at LEAST one neighbor especially if the input data is skewed (does not create a nice bell curve when you plot the values as a histogram).
 Usually make sure that the number of neighbors is neither too small (most features have only one or two neighbors) nor too large (several features include all other features as neighbors), because that would make resultant Z scores less reliable. The Z scores are reliable (even with skewed data) as long as each feature is associated with several neighbors (approximately 8, as a rule of thumb). 
 This function can be applied to skewed data because it is "asymptotically normal".
 
