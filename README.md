@@ -5,6 +5,7 @@ Calculates Getis-Ord Gi and Gi* statistic (local spatial autocorrelation) for a 
 
 ## Usage
 It is a Javascript ES6 function. To be use it in any compatible browser, Node-jS and so on.
+
 function GetisOrdGi(xyz(), inputmaxDist, MissingData)
 
 ### Input:
